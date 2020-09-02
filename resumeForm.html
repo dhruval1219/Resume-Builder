@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <title> Resume Builder </title>
+  <script src="jquery.js"></script>
+  <script>
+
+    //function to add skills
+    var i=3;
+    $(function(){
+      $('.skillButton').click(function(){
+        if(i <= 10){
+          $('.skill').append("<li><input type='text' class='skill"+ i +"' name='skill"+ i +"' size=100>");
+          $('.skill').append("</li>");
+          i=i+1;
+        }
+      })
+    })
+
+    //function to add more project
+    var j=1;
+    $(function(){
+      $('.projectButton').click(function(){
+        if(j <= 5){
+          $('.addProject').append("<tr><th colspan=2> <u>Project #"+j+"</u> </th></tr>");
+          $('.addProject').append("<tr><th>Name*</th><td><input type='text' size=100 placeholder='Project Name' class='projectName"+ j +"' name='projectName"+ j +"' required></td></tr>");
+          $('.addProject').append("<tr><th>Description*</th><td><textarea rows=3 cols=105 placeholder='Project Description' required class='projectDes"+ j +"' name='projectDes"+ j +"'></textarea></td></tr>");
+          $('.addProject').append("<tr><th>&nbsp</th><td></td></tr>");
+          $('.addProject').append("<tr><th>&nbsp</th><td></td></tr>");
+          j=j+1;
+        }
+      })
+    })
+
+    //function to add more experience
+    var x=1;
+    $(function(){
+      $('.experienceButon').click(function(){
+        if(x <= 4){
+          $('.addExperience').append("<tr><th colspan=2> <u>Experience #"+x+"</u> </th></tr>");
+          $('.addExperience').append("<tr><th>Employer*</th><td><input type='text' placeholder='ex: NCR' name='employerName"+ x +"' class='employerName"+ x +"' size=80 required></td></tr>");
+          $('.addExperience').append("<tr><th>Position*</th><td><input type='text' placeholder='ex: Software Engineer Intern' name='position"+ x +"' class='position"+ x +"' size=80 required></td></tr>");
+          $('.addExperience').append("<tr><th>Start Date*</th><td><input type='date' name='startDate"+ x +"' class='startDate"+ x +"' required></td></tr>");
+          $('.addExperience').append("<tr><th>Still Employed*</th><td><input type='radio' name='employed"+ x +"' value='yes"+ x +"' required> <label for='yes"+ x +"'>Yes</label><input type='radio' name='employed"+ x +"' value='no"+ x +"'> <label for='no"+ x +"'>No</label></td></tr>");
+          $('.addExperience').append("<tr><th>End Date</th><td><input type='date' name='endDate"+ x +"' class='endDate"+ x +"'></td></tr>");
+          $('.addExperience').append("<tr><th>Description*</th><td><ul><li><input type='text' size=120  name='des"+ x +"_1' class='des"+ x +"_1'></li><li><input type='text' size=120 name='des"+ x +"_2' class='des"+ x +"_2'></li><li><input type='text' size=120 name='des"+ x +"_3' class='des"+ x +"_3'></li><li><input type='text' size=120 name='des"+ x +"_4' class='des"+ x +"_4'></li></ul></td></tr>");
+          $('.addExperience').append("<tr><th>&nbsp</th><td></td></tr>");
+          $('.addExperience').append("<tr><th>&nbsp</th><td></td></tr>");
+          x=x+1;
+        }
+      })
+    })
+
+    //function to add more Involvement
+    var y=2;
+    $(function(){
+      $('.involvementButton').click(function(){
+        if(y <= 10){
+          $('.involvement').append("<li> <input type='text' size=100 class='involvement"+ y +"' name='involvement"+ y +"'> </li>");
+          y=y+1;
+        }
+      })
+    })
+  </script>
+
+</head>
+<body>
+  <form method="post" action="resume.php">
+
+    <div class="heading"> Resume Builder </div><br>
+
+    <!-- Basic information -->
+    <table class="basicInfo">
+      <tr> <th>First Name*</th> <td><input type="text" name="firstName" size=40 placeholder="ex: Dhruval" required></td>
+      <th> &nbsp&nbsp&nbsp&nbsp Last Name*</th> <td><input type="text" name="lastName" size=40 placeholder="ex: Patel" required></td> </tr>
+      <tr> <th>Email*</th> <td><input type="text" name="email" size=40 placeholder="ex: dpatel175@student.gsu.edu" required></td>
+      <th> &nbsp&nbsp&nbsp&nbsp Phone Number*</th> <td><input type="tel" name="pNum" size=40 placeholder="ex: (123) 456-7890" required></td> </tr>
+      <tr> <th>Street Address</th> <td><input type="text" size=40 name="streetAddress" placeholder="ex: 123 Main Street"></td>
+      <th> &nbsp&nbsp&nbsp&nbsp City*</th> <td><input type="text" size=40 name="city" required placeholder="ex: Atlanta"></td> </tr>
+      <tr><th>State*</th> <td><input type="text" size=40 maxlength="2" name="state" required placeholder="ex: GA"></td>
+      <th> &nbsp&nbsp&nbsp&nbsp ZipCode*</th><td><input type="text" size=40 name="zipcode" required placeholder="ex: 30302"></td></tr>
+      <tr> <th>LinkedIn</th> <td><input type="link" size=40 name="linkedIn" placeholder="ex: https://www.linkedin.com/in/dhruval-patel-ba9a45170/"></td>
+      <th> &nbsp&nbsp&nbsp&nbsp GitHub</th> <td><input type="link" size=40 name="GitHub" placeholder="ex: https://github.com/dhruval1219/"></td> </tr>
+    </table>
+
+    <!-- Objective -->
+    <h2> &nbsp Objective</h2>
+    <textarea class="objective" required name="obj"></textarea>
+
+    <!-- Education -->
+    <h2> &nbsp Education </h2>
+    <table class="edu">
+      <tr> <th>College name*</th> <td>&nbsp<input type="text" required name="collegeName" placeholder="ex: Georgia State University" size=60></td> </tr>
+      <tr> <th>City*</th> <td>&nbsp<input type="text" name="collegeCity" required placeholder="ex: Atlanta" size=60></td> </tr>
+      <tr> <th>State*</th> <td>&nbsp<input type="text" name="collegeState" required maxlength="2" placeholder="ex: GA" size=60></td> </tr>
+      <tr><th>Status*</th>
+        <td>&nbsp
+          <input type="radio" value="graduated" name="graduation" required>
+          <label for="graduated">Graduated</label>
+          <input type="radio" value="attending" name="graduation">
+          <label for="attending">Still Attending</label>
+        </td>
+      </tr>
+
+      <tr> <th><div>Graduation*</div></th> <td>&nbsp<input type="date" required placeholder="mm dd,yyyy" name="graduationDate"></td> </tr>
+
+      <tr> <th> Degree & Major*</th>
+      <td>&nbsp<input type="text" name="degreeMajor" required placeholder="ex: Bachelor's in Computer Science" size=60></td> </tr>
+      <tr> <th> GPA*</th>
+      <td>&nbsp<input type="text" name="gpa" required placeholder="ex: 3.5" size=60></td> </tr>
+      <tr> <th> Addional info </th> <td> &nbsp<textarea name="moreInfo" rows="3" cols="100" placeholder="ex: Awards, Relevant Coursework, etc."></textarea> </td> </tr>
+
+    </table>
+
+    <!-- Skills -->
+    <h2> &nbspSkills</h2>
+    <ul>
+      <li><input type='text' class='skill1' name='skill1' required size=100></li>
+      <li><input type='text' class='skill2' name='skill2' required size=100></li>
+      <div class="skill"></div>
+    </ul>
+    <input type="button" value="Add Skill" class="skillButton">
+
+    <!-- Project -->
+    <h2> &nbsp Project </h2>
+    <table class="project">
+      <div class="addProject"></div>
+    </table>
+    <input type="button" value="Add Project" class="projectButton">
+
+    <!-- Experience -->
+    <h2> &nbspExperience (Recent Employment - Previous Employment) </h2>
+    <table class="experience">
+      <div class="addExperience"></div>
+    </table>
+    <input type="button" value="Add Experience" class="experienceButon">
+
+    <h2> &nbspInvolvement </h2>
+    <ul>
+        <li> <input type="text" size=100 class="involvement1" name="involvement1"> </li>
+        <div class="involvement"></div>
+    </ul>
+    <input type="button" value="Add Involvement" class="involvementButton" required>
+
+    <h2> &nbspCreate Resume </h2>
+    <button class="submit" name="submit"> Click here</button><br><br>
+  </form>
+
+
+</body>
+</html>

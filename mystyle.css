@@ -1,0 +1,70 @@
+body{
+  background-color: #E4E8FE;
+}
+
+.heading{
+  padding: 25px;
+  font-size: 45px;
+  background-color: #000C47;
+  color: white;
+  text-align: center;
+  font-family: "Georgia";
+  font-variant: small-caps;
+}
+
+.basicInfo, .edu, .project, .experience {
+  margin-left: 25px;
+  margin-right: auto;
+  width: 100%;
+}
+
+th, td{
+  font-family: "Charter";
+  text-align: left;
+  font-size: 17px;
+}
+
+h2{
+  font-family: "Franklin Gothic";
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border-color: #000C47;
+}
+
+.objective{
+  width: 99%;
+  height: 100px;
+  margin: 5px;
+  font-style: italic;
+}
+
+.edu{
+  margin-left: 25px;
+  margin-right: auto;
+  width: 100%;
+}
+
+li{
+  margin: 5px;
+}
+
+.submit{
+  background-color: #000C47;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 13px;
+  margin-left: 45%;
+  margin-right: 45%;
+}
+
+.skillButton, .projectButton, .experienceButon, .involvementButton{
+  margin-left: 25px;
+}
+
+.addProject, .addExperience{
+  margin-left: 25px;
+}
